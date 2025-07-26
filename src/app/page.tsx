@@ -8,5 +8,6 @@ export default async function Page(props: {
   const searchParams = await props.searchParams;
   const query = searchParams?.q || "";
 
+  /* @ts-expect-error Server Component */
   return <Home searchQuery={query} />;
 }

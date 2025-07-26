@@ -1,11 +1,15 @@
-import { DrugCandidate } from "../mock";
+import { getDrugCandidates } from "@/app/utils";
 import { DrugCard, NotFoundDrugs } from ".";
 
 type DrugCardWrapperProps = {
-  drugCandidates: DrugCandidate[];
+  searchQuery: string;
 };
 
-export const DrugCardWrapper = ({ drugCandidates }: DrugCardWrapperProps) => {
+export const DrugCardWrapper = async ({
+  searchQuery,
+}: DrugCardWrapperProps) => {
+  const drugCandidates = await getDrugCandidates(searchQuery);
+
   if (!drugCandidates.length) {
     return <NotFoundDrugs />;
   }

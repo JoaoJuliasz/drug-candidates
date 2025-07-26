@@ -1,5 +1,5 @@
+import { DrugCandidate } from "@/app/types";
 import Link from "next/link";
-import { DrugCandidate } from "../mock";
 
 type DrugCardProps = {
   drugCandidate: DrugCandidate;
@@ -21,7 +21,9 @@ export const DrugCard = ({
     >
       <div className="flex justify-between w-full">
         <h5 className="text-gray-800 font-bold text-base">{name}</h5>
-        <div className={`p-1 rounded-1 text-xs font-bold  text-white rounded-sm ${statusBg[status]}`}>
+        <div
+          className={`p-1 rounded-1 text-xs font-bold  text-white rounded-sm ${statusBg[status]}`}
+        >
           <span>{status}</span>
         </div>
       </div>

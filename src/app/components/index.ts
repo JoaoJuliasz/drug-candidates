@@ -1,5 +1,3 @@
 export * from "./SearchBar";
-export * from "./DrugCard";
-export * from "./DrugCardWrapper";
+export * from "./drugCard";
 export * from "./Home";
-export * from "./NotFoundDrugs";

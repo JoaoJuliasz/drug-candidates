@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams, useRouter } from "next/navigation";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 export const SearchBar = () => {
   const searchParams = useSearchParams();
@@ -13,14 +13,21 @@ export const SearchBar = () => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchInput(value);
-    const params = new URLSearchParams(searchParams);
-    if (value) {
-      params.set("q", value);
-    } else {
-      params.delete("q");
-    }
-    replace(`?${params.toString()}`);
   };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const params = new URLSearchParams(searchParams.toString());
+      if (searchInput) {
+        params.set("q", searchInput);
+      } else {
+        params.delete("q");
+      }
+      replace(`?${params.toString()}`);
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [searchInput]);
 
   return (
     <div className="w-full">

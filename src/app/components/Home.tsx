@@ -1,16 +1,11 @@
 import { Suspense } from "react";
-import { DrugCardWrapper, SearchBar } from ".";
-import { mockDrugCandidates } from "../mock";
+import { DrugCardSkeletonList, DrugCardWrapper, SearchBar } from ".";
 
 type HomeProps = {
   searchQuery: string;
 };
 
-export const Home = ({ searchQuery }: HomeProps) => {
-  const filteredDrugs = mockDrugCandidates.filter((item) =>
-    item.name.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase())
-  );
-
+export async function Home({ searchQuery }: HomeProps) {
   return (
     <div className="w-full flex justify-center h-screen">
       <main className="font-san max-w-3xl w-full h-full flex flex-col justify-center gap-4 items-center p-4">
@@ -23,11 +18,12 @@ export const Home = ({ searchQuery }: HomeProps) => {
             [&::-webkit-scrollbar-thumb]:rounded-full
             [&::-webkit-scrollbar-thumb]:bg-gray-300"
         >
-          <Suspense key={searchQuery} fallback={<p>loading...</p>}>
-            <DrugCardWrapper drugCandidates={filteredDrugs} />
+          <Suspense fallback={<DrugCardSkeletonList />}>
+            {/* @ts-expect-error Server Component */}
+            <DrugCardWrapper searchQuery={searchQuery} />
           </Suspense>
         </div>
       </main>
     </div>
   );
-};
+}
