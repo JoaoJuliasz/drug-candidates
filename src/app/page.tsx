@@ -1,13 +1,12 @@
-import { DrugCardWrapper, SearchBar } from "./components";
-import { mockDrugCandidates } from "./mock";
+import { Home } from "./components";
 
-export default function Page() {
-  return (
-    <div className="w-full flex justify-center max-h-screen">
-      <main className="font-san max-w-3xl w-full h-full flex flex-col justify-center gap-4 items-center p-4">
-        <SearchBar />
-        <DrugCardWrapper drugCandidates={mockDrugCandidates} />
-      </main>
-    </div>
-  );
+export default async function Page(props: {
+  searchParams?: Promise<{
+    q?: string;
+  }>;
+}) {
+  const searchParams = await props.searchParams;
+  const query = searchParams?.q || "";
+
+  return <Home searchQuery={query} />;
 }
