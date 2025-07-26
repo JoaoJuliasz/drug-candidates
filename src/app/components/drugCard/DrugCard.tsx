@@ -18,7 +18,7 @@ export const DrugCard = ({
     <Link
       href={`/${id}`}
       className="flex flex-col gap-3 py-4 px-3 w-full border border-[#f1f1f1] rounded-sm
-      transition delay-50 duration-300 ease-in-out hover:bg-[#f1f1f1]"
+      transition delay-50 duration-150 ease-in-out hover:bg-[#f1f1f1]"
     >
       <div className="flex justify-between w-full">
         <h5 className="text-gray-800 font-bold text-base">{name}</h5>

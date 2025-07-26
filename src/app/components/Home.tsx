@@ -8,7 +8,7 @@ type HomeProps = {
 export async function Home({ searchQuery }: HomeProps) {
   return (
     <div className="w-full flex justify-center h-screen">
-      <main className="font-san max-w-3xl w-full h-full flex flex-col justify-center gap-4 items-center p-4">
+      <main className="max-w-3xl w-full h-full flex flex-col justify-center gap-4 items-center p-4">
         <SearchBar />
         <div
           className="w-full flex-1 overflow-y-auto
