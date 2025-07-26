@@ -1,2 +1,6 @@
 @import "tailwindcss";
 
+
+:root {
+  --border-color: #f1f1f1;
+}
