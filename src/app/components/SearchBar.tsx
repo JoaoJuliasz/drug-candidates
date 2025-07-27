@@ -11,7 +11,7 @@ export const SearchBar = () => {
   const { replace } = useRouter();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
+    const value = e.target.value.trimStart();
     setSearchInput(value);
   };
 
@@ -30,14 +30,15 @@ export const SearchBar = () => {
   }, [searchInput]);
 
   useEffect(() => {
-    if(!searchParams.toString().length && searchInput.length) {
-        setSearchInput('')
+    if (!searchParams.toString().length && searchInput.length) {
+      setSearchInput("");
     }
-  }, [searchParams.toString()])
+  }, [searchParams.toString()]);
 
   return (
     <div className="w-full">
       <input
+        data-testid="drug-filter"
         className="w-full border-1 rounded-sm py-1.5 px-2 outline-none border-[#f1f1f1]"
         placeholder="Search drug candidates by name..."
         value={searchInput}

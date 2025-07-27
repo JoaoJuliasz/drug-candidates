@@ -23,6 +23,7 @@ export const DrugCard = ({
       href={cardLink()}
       className="flex flex-col gap-3 py-4 px-3 w-full border border-[#f1f1f1] rounded-sm
       transition delay-50 duration-150 ease-in-out hover:bg-[#f1f1f1]"
+      data-testid="drug-card"
     >
       <DrugNameWrapper name={name} status={status} />
       <p className="text-gray-500 text-sm">{description}</p>

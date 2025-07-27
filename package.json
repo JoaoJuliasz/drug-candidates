@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "e2e": "cypress run",
+    "e2e:local": "pnpm dev & sleep 5 && cypress run"
   },
   "dependencies": {
     "next": "15.4.4",
@@ -19,6 +21,7 @@
     "@types/node": "^20",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19",
+    "cypress": "^14.5.3",
     "eslint": "^9",
     "eslint-config-next": "15.4.4",
     "tailwindcss": "^4",

@@ -21,7 +21,7 @@ export const DrugCandidate = ({ drug, query }: DrugCandidateProps) => {
 
   return (
     <main className="w-full min-h-screen py-4 flex flex-col gap-3 md:px-4">
-      <Link className="size-fit text-blue-400 text-sm" href={cardLink()}>
+      <Link className="size-fit text-blue-400 text-sm" href={cardLink()} data-testid="back-btn">
         Back to list
       </Link>
       <div
