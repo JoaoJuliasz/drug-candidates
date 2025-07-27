@@ -5,13 +5,23 @@ import { DrugInfoItems } from ".";
 
 type DrugCandidateProps = {
   drug: DrugCandidateType;
+  query: string;
 };
 
-export const DrugCandidate = ({ drug }: DrugCandidateProps) => {
+export const DrugCandidate = ({ drug, query }: DrugCandidateProps) => {
   const { name, status } = drug;
+
+  const cardLink = () => {
+    let link = "/";
+    if (query) {
+      link += `?q=${query}`;
+    }
+    return link;
+  };
+
   return (
     <main className="w-full min-h-screen py-4 flex flex-col gap-3 md:px-4">
-      <Link className="size-fit text-blue-400 text-sm" href="/">
+      <Link className="size-fit text-blue-400 text-sm" href={cardLink()}>
         Back to list
       </Link>
       <div

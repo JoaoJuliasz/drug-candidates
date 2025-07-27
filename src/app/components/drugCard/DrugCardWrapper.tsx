@@ -17,7 +17,11 @@ export const DrugCardWrapper = async ({
   return (
     <div className="w-full flex justify-center flex-col gap-3">
       {drugCandidates.map((drugCandidate) => (
-        <DrugCard key={drugCandidate.id} drugCandidate={drugCandidate} />
+        <DrugCard
+          key={drugCandidate.id}
+          drugCandidate={drugCandidate}
+          query={searchQuery}
+        />
       ))}
     </div>
   );
