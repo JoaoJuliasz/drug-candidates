@@ -1,8 +1,10 @@
 import { DrugCandidate } from "../types";
 
+const url = process.env.NEXT_PUBLIC_URL;
 export async function getDrugCandidateById(id: string) {
   await new Promise((resolve) => setTimeout(resolve, 500));
-  const res = await fetch(`http://localhost:3000/api/drugs/${id}`);
+  console.log(url)
+  const res = await fetch(`${url}/api/drugs/${id}`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch drug candidates");

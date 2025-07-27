@@ -1,7 +1,9 @@
 import { ListDrugCandidate } from "../types";
 
+const url = process.env.NEXT_PUBLIC_URL;
 export async function getDrugCandidates(query: string) {
-  const res = await fetch(`http://localhost:3000/api/drugs?query=${query}`);
+  console.log(url);
+  const res = await fetch(`${url}/api/drugs?query=${query}`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch drug candidates");
