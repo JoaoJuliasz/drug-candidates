@@ -29,6 +29,12 @@ export const SearchBar = () => {
     return () => clearTimeout(timeout);
   }, [searchInput]);
 
+  useEffect(() => {
+    if(!searchParams.toString().length && searchInput.length) {
+        setSearchInput('')
+    }
+  }, [searchParams.toString()])
+
   return (
     <div className="w-full">
       <input
