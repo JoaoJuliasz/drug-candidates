@@ -1,3 +1,3 @@
 export * from "./getDrugCandidates";
-export * from './getDrugCandidates'
-export * from './getDrugCandidateById'
+export * from "./drugCandidateInfoItemsSetup";
+export * from "./getDrugCandidateById";

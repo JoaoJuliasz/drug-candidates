@@ -13,7 +13,7 @@ export const mockDrugCandidates: DrugCandidate[] = [
     approvalDate: undefined,
     manufacturer: "Global Biologics",
     therapeuticArea: "Endocrinology",
-    administrationRoute: "IV",
+    administrationRoute: "IV (Intravenous)",
     dosageForm: "Inhaler",
   },
   {
@@ -58,7 +58,7 @@ export const mockDrugCandidates: DrugCandidate[] = [
     approvalDate: undefined,
     manufacturer: "GenPharm Inc.",
     therapeuticArea: "Gastroenterology",
-    administrationRoute: "IV",
+    administrationRoute: "IV (Intravenous)",
     dosageForm: "Capsule",
   },
   {
@@ -103,7 +103,7 @@ export const mockDrugCandidates: DrugCandidate[] = [
     approvalDate: undefined,
     manufacturer: "Meditech Inc.",
     therapeuticArea: "Gastroenterology",
-    administrationRoute: "IV",
+    administrationRoute: "IV (Intravenous)",
     dosageForm: "Inhaler",
   },
   {
@@ -193,7 +193,7 @@ export const mockDrugCandidates: DrugCandidate[] = [
     approvalDate: undefined,
     manufacturer: "NeuroPharma Ltd.",
     therapeuticArea: "Endocrinology",
-    administrationRoute: "IV",
+    administrationRoute: "IV (Intravenous)",
     dosageForm: "Capsule",
   },
   {
