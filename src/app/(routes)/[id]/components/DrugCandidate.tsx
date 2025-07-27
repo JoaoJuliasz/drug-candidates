@@ -1,5 +1,6 @@
 import { DrugNameWrapper } from "@/app/components";
 import { DrugCandidate as DrugCandidateType } from "@/app/types";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { DrugInfoItems } from ".";
 
@@ -21,7 +22,12 @@ export const DrugCandidate = ({ drug, query }: DrugCandidateProps) => {
 
   return (
     <main className="w-full min-h-screen py-4 flex flex-col gap-3 md:px-4">
-      <Link className="size-fit text-blue-400 text-sm" href={cardLink()} data-testid="back-btn">
+      <Link
+        className="size-fit text-blue-400 text-sm flex items-center"
+        href={cardLink()}
+        data-testid="back-btn"
+      >
+        <ArrowLeft size="18" />
         Back to list
       </Link>
       <div

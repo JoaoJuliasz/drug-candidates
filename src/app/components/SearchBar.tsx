@@ -2,6 +2,7 @@
 
 import { useSearchParams, useRouter } from "next/navigation";
 import { ChangeEvent, useEffect, useState } from "react";
+import { Search, X } from "lucide-react";
 
 export const SearchBar = () => {
   const searchParams = useSearchParams();
@@ -13,6 +14,10 @@ export const SearchBar = () => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.trimStart();
     setSearchInput(value);
+  };
+
+  const handleClear = () => {
+    setSearchInput("");
   };
 
   useEffect(() => {
@@ -36,14 +41,18 @@ export const SearchBar = () => {
   }, [searchParams.toString()]);
 
   return (
-    <div className="w-full">
+    <div className="w-full flex items-center border-1 pr-1 rounded-sm border-[#f1f1f1] text-gray-500">
+      <Search className="ml-2" />
       <input
         data-testid="drug-filter"
-        className="w-full border-1 rounded-sm py-1.5 px-2 outline-none border-[#f1f1f1]"
+        className="w-full border-none py-1.5 px-2 outline-none "
         placeholder="Search drug candidates by name..."
         value={searchInput}
         onChange={handleChange}
       />
+      {searchInput.length > 0 && (
+        <X onClick={handleClear} size="16" className="cursor-pointer mr-2" data-testid="search-input-clear"/>
+      )}
     </div>
   );
 };

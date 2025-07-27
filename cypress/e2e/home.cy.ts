@@ -33,5 +33,12 @@ describe("Home Page", () => {
     cy.get('[data-testid="list-not-found-btn"]').click();
     cy.get('[data-testid="drug-filter"]').should("have.value", "");
   });
+  
+  it("should clear search filter on not search input clear click", () => {
+    cy.get('[data-testid="drug-filter"]').type("non-existing-drug");
+
+    cy.get('[data-testid="search-input-clear"]').click();
+    cy.get('[data-testid="drug-filter"]').should("have.value", "");
+  });
 });
 export {};
