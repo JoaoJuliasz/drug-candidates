@@ -47,7 +47,7 @@ pnpm install
 npm install
 ```
 
-### 3. Add a .env file
+### 3. Add .env file
 
 ```bash
 NEXT_PUBLIC_URL=http://localhost:3000
