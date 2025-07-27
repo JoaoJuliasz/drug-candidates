@@ -97,7 +97,7 @@ All drug data is stored in a local file and accessed via a utility function.
 const drugs = await getDrugCandidates(searchQuery);
 ```
 
-## 📝 Assumptions & Notes
+## Assumptions & Notes
 
 * Designed for scalability — list rendering can be optimized further with pagination or virtualization if needed.
 * Minimal dependencies for simplicity; no state management library required.
