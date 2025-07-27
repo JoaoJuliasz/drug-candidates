@@ -10,8 +10,8 @@ type DrugCandidateProps = {
 export const DrugCandidate = ({ drug }: DrugCandidateProps) => {
   const { name, status } = drug;
   return (
-    <main className="w-full min-h-screen p-4 flex flex-col">
-      <Link className="size-fit text-blue-400" href="/">
+    <main className="w-full min-h-screen py-4 flex flex-col gap-3 md:px-4">
+      <Link className="size-fit text-blue-400 text-sm" href="/">
         Back to list
       </Link>
       <div
